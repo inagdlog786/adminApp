@@ -1,0 +1,22 @@
+<h3>Property Binding</h3>
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{{ imageOne }}" class="img-fluid" alt="Sample image">
+  </div>
+  <div class="col-sm-4">
+    <img [src]="imageOne" class="img-fluid" alt="Sample image">
+  </div>
+  <div class="col-sm-4">
+    <img bind-src="imageOne" class="img-fluid" alt="Sample image">
+  </div>
+ <div class="clearfix"></div>
+  <div class="col-sm-12 mt-3">
+    <button type="button" [disabled]="ButtonStatus" class="btn btn-outline-success">Disabled status</button>
+    <button type="button" [disabled]="ButtonStatusString=='Enabled'" class="btn btn-outline-success">Disabled Name</button>
+  </div>
+</div>
+<h3>Event Binding</h3>
+<button class="btn btn-success" type="button" (click)="clickEvent($event)">Buton Event console</button>
+<button class="btn btn-success" type="button" (mouseenter)="mouseEnter($event)">Mouse Enter</button>
+
+<h3>Animations</h3>

@@ -1,0 +1,17 @@
+<h1>API GET Request</h1>
+<table class="table table-bordered">
+<thead class="thead-default">
+<tr>
+<th>ID</th>
+<th>User Name</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor='let loginDetail of loginDetails'>
+<td>{{loginDetail.ID}}</td>
+<td>{{loginDetail.UserName}}</td>
+<td>{{loginDetail.Password}}</td>
+</tr>
+</tbody>
+</table>

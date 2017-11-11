@@ -1,0 +1,54 @@
+<nav>
+  <div class="row">
+    <div class="col-5">
+      <div class="location p-2">YOUR LOCATION</div>
+    </div>
+    <div class="col-7">
+      <ul class="list-inline mb-0 text-right">
+  <li class="list-inline-item">SIGN IN / SIGN UP</li>
+  <li class="list-inline-item"><a href="#"  routerLink="/Contactus" class="ContractLink p-2 d-inline-block">Contract Us</a></li>
+</ul>
+    </div>
+  </div>
+</nav>
+<header class="p-2 mb-3">
+  <div class="row">
+    <div class="col-6"><img routerLink="/" src="assets\images\logo.jpg" class="img-fluid"></div>
+    <div class="col-6">
+      <div class="cart text-right pt-2  mr-lg-5">Cart<span class="badge badge-danger">10</span></div>
+    </div>
+    <div class="search text-center">
+      <div class="input-group">
+        <div class="input-group-btn">
+<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Categories</button>
+<div class="dropdown-menu dropdown-menu-left">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<div role="separator" class="dropdown-divider"></div>
+<a class="dropdown-item" href="#">Separated link</a>
+</div>
+</div>
+<input type="search" class="form-control">
+<span class="input-group-btn">
+<button class="btn btn-dark" type="button">Search</button>
+</span>
+</div>
+    </div>
+  </div>
+</header>
+<main class="container-fluid">
+  <ul class="list-inline">
+    <li class="list-inline-item"><a routerLink="/crud">CRUD</a></li>
+    <li class="list-inline-item"><a routerLink="/crudpopup">CRUD-POPUP</a></li>
+    <li class="list-inline-item"><a routerLink="/Coursetroexamples">Coursetro Examples</a></li>
+    <li class="list-inline-item"><a routerLink="/Logindetails">Login Details</a></li>
+    <li class="list-inline-item"><a routerLink="/CrudAPI">Crud API</a></li>
+  </ul>
+</main>
+<section class="container-fluid">
+  <router-outlet></router-outlet>
+</section>
+<footer class="container-fluid mt-2">
+  {{copyRights}}
+</footer>

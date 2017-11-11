@@ -1,0 +1,95 @@
+<h1>API CRUD</h1>
+<div *ngIf="alertGrid==true" class="alert alert-success" role="alert">
+    <button type="button" class="close" (click)="closeAlert()"><span aria-hidden="true">&times;</span></button>
+    {{GridStatusMesage}}</div>
+<table class="table table-bordered">
+    <thead class="thead-default">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Product Code</th>
+            <th>Avaliable</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Product Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let item of Products'>
+            <td>{{item.ID}}</td>
+            <td>{{item.ProductName}}</td>
+            <td>{{item.ProductCode}}</td>
+            <td>{{item.Avaliable}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.Rating}}</td>
+            <td>{{item.ProductImage}}</td>
+            <td><button type="button" class="btn btn-default" (click)="editProduct(item)" data-toggle="modal" data-target="#ProductRecard">Edit</button></td>
+            <td><button type="button" class="btn btn-default" (click)="deleteProduct(item.ID)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" (click)="addProduct()" data-toggle="modal" data-target="#ProductRecard">
+Add Product</button>
+<div class="modal-backdrop fade in" [style.display]="showModal ? 'block' : 'none'"></div>
+<!-- The modal -->
+<div class="modal fade" id="ProductRecard" role="dialog" style="display: block" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabelLarge">{{StatusProducts}} {{EditProductId}}</h4>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="alert==true" class="alert alert-success" role="alert">{{StatusMesage}}</div>
+                <form (submit)="postProduct(SaveStatus)" novalidate>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <label>Product Name</label>
+                                <input type="text" class="form-control" name="ProductName" [(ngModel)]="model.ProductName">
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <label>Product code</label>
+                                <input type="text" class="form-control" name="ProductCode" [(ngModel)]="model.ProductCode">
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <label>Avaliable</label>
+                                <input type="text" class="form-control" name="Avaliable" [(ngModel)]="model.Avaliable">
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <label>Price</label>
+                                <input type="text" class="form-control" name="Price" [(ngModel)]="model.Price">
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <label>Rating</label>
+                                <input type="text" class="form-control" name="Rating" [(ngModel)]="model.Rating">
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-6">
+                            <fieldset class="form-group">
+                                <label>Product image</label>
+                                <div class="clearfix"></div>
+                                <input type="file" name="ProductImage" [(ngModel)]="model.ProductImage">
+                            </fieldset>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default">{{SaveStatus}}</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

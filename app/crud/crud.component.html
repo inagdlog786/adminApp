@@ -1,0 +1,17 @@
+<h1>{{pageTitleCrud}}</h1>
+<table class="table table-bordered">
+<thead class="thead-default">
+<tr>
+<th>ID</th>
+<th>User Name</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor='let Datalist of Datalists'>
+<td>{{Datalist.ID}}</td>
+<td>{{Datalist.UserName}}</td>
+<td>{{Datalist.Password}}</td>
+</tr>
+</tbody>
+</table>
